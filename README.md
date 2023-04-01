@@ -55,7 +55,7 @@ npm run dev
 
 سپس به آدرس لوکال هاست مراجعه می کنیم و اگر با صفحه زیر مواجه شدیم یعنی نصب با موفقیت انجام شده است.
 
-![alt text](https://florianherlings.de/public/2020-06-29/homepage.png)
+![next js starter page](https://florianherlings.de/public/2020-06-29/homepage.png)
 
 بعد از نصب نکست جی اس استراکچر پروژه را آماده میکنیم.
 استراکچر پروژه ما به صورت زیر است :
@@ -170,3 +170,38 @@ congratulations !!!
 ### آغاز توسعه پروژه
 
 در این مرحله از بخش اول وب سایت شروع به ساخت کامپوننت ها می کنیم و کامپوننت هایی که در چندین قسمت استفاده می شوند را به صورت ریوزیبل می سازیم تا کد کمتری نوشته شود و در نهایت برنامه ای بهینه تر داشته باشیم.
+
+### پیاده سازی روی هاست
+
+هاست پروایدر های زیادی وجود دارند که میتوانیم برنامه خود را روی آنها دیپلوی کنیم از جمله vercel و netlify
+<br>
+ما پروژه خود را روی netlify دپلوی خواهیم کرد
+<br>
+برای این کار ابتدا تمام کد های خود را روی ریپوزیتوری گیت هاب پوش می کنیم. سپس در سایت netlify ثبت نام میکنیم.
+(برای کار با netlify باید از vpn استفاده کنیم.)
+
+![netlify](https://cdn.hashnode.com/res/hashnode/image/upload/v1644080613728/s27NP3fJY.png?auto=compress,format&format=webp)
+
+برای دیپلوی کردن به داشبورد نتلیفای مراجعه میکنیم و دکمه اضافه کردن سایت جدید را انتخاب می کنیم.
+
+![netlify](https://cdn.hashnode.com/res/hashnode/image/upload/v1644082441537/hYhIpMP6B.png?auto=compress,format&format=webp)
+
+از منوی باز شده گزینه import an existing project را انتخاب می کنیم.
+
+![netlify](https://cdn.hashnode.com/res/hashnode/image/upload/v1644082852674/JQrAOg-uD.png?auto=compress,format&format=webp)
+
+سپس به صفحه جدید منتقل می شوید که از شما می پرسد از کدام گیت پروایدر می خواهید استفاده کنید ؟
+
+انتخاب ما گیت هاب است.
+
+![netlify](https://cdn.hashnode.com/res/hashnode/image/upload/v1644083397211/PSMnVT4zF.png?auto=compress,format&format=webp)
+
+پروژه خود را از میان پروژه های دیگر گیت هاب انتخاب می کنیم و به ادامه دیپلوی می پردازیم. در صورت عدم نیاز تنظیمات پایه را تغییر ندهید.
+
+![netlify](https://cdn.hashnode.com/res/hashnode/image/upload/v1644083552224/rtND2bWdb.png?auto=compress,format&format=webp)
+
+روی دکمه Deploy site کلیک می کنیم و صبر می کنیم تا عملیات انجام شود.
+
+شما می توانید تمام مراحل دیپلوی کردن را در قسمت لاگ پیگیری نمایید.
+
+با استفاده از این روش هربار ریپوزیتوری آپدیت شود سایت هم به صورت اتوماتیک دوباره دیپلوی می شود و تمام تغییرات جدید روی هاست قرار میگیرد.
