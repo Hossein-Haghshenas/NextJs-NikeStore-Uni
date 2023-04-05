@@ -190,6 +190,42 @@ const poppins = Poppins({ subsets: ["latin"], style: ["normal", "italic"], weigh
 
 بعد از آماده سازی استایل ها و فونت پروژه از بخش اول وب سایت یعنی header , hero شروع به ساخت کامپوننت ها می کنیم و کامپوننت هایی که در چندین قسمت استفاده می شوند را به صورت ریوزیبل می سازیم تا کد کمتری نوشته شود و در نهایت برنامه ای بهینه تر داشته باشیم.
 
+وقتی توسعه UI به اتمام رسید با استفاده از Redux toolkit بخش سبد محصولات را پیاده سازی می کنیم.
+
+ریداکس تولکیت
+در واقع یک راه برای ساده تر نوشتن ریداکس است و در پشت پرده دقیقا همان کارهایی که با ریداکس انجام می دهیم را انجام میدهد منتها دیگر نیازی نیست با خیلی از پیچیدگی هایی که ریداکس دارد سر و کله بزنیم.
+
+برای پیاده سازی آن ابتدا یک Store می سازیم و اسلایس خود را در آن قرار می دهیم
+
+```js
+import { configureStore } from "@reduxjs/toolkit";
+import cartSlice from "./cartSlice";
+
+const Store = configureStore({
+  reducer: {
+    cart: cartSlice,
+  },
+});
+
+export default Store;
+```
+
+سپس در اسلایسی که برای سبد خرید یا cart خود ساخته ایم state ها و reducer های خود را می نویسیم.
+همچنین یک فانکشن طراحی میکنیم که محصولات سبد خرید را در لوکال استوریج کاربر هم ذخیره کند و کاربر همیشه به محصولات سبد خرید خودش دسترسی داشته باشد.
+
+```js
+const connectToLocalStorage = (data) => {
+  let haveData;
+  if (typeof window !== "undefined") {
+    data && localStorage.setItem("cart", JSON.stringify(data));
+    haveData = localStorage.getItem("cart");
+  }
+  return haveData ? JSON.parse(localStorage.getItem("cart")) : [];
+};
+```
+
+در نهایت با استفاده از لایبرری react-hot-toast نوتیفیکیشن عملیات های مختلف حذف و اضافه محصولات را میسازیم.
+
 ### پیاده سازی روی هاست
 
 هاست پروایدر های زیادی وجود دارند که میتوانیم برنامه خود را روی آنها دیپلوی کنیم از جمله vercel و netlify
